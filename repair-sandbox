@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# this file should restore your sandbox to how it should be
+# if all you projects were done without destroying any sandbox
+
+cwd=$(pwd)
+cd /
+
+# @0.00. Shell, navigation
+cd root
+touch so_cool
+cp school /tmp/
+mv old_school new_school
+mv not_here /tmp/right_school
+rm ready_to_be_removed
+mkdir school_is_amazing
+rmdir empty_directory/
+cd /
+
+# @0.02. Emacs
+cd root
+mkdir 0x02_emacs
+cd 0x02_emacs
+echo "C-x C-f" > opening
+echo "C-x C-s" > saving
+echo "C-k" > cutting
+echo "C-y" > pasting
+echo "C-s" > searching
+echo "C-/" > undoing
+echo "C-x C-c" > quitting
+cd /
+
+
+# @0x03. vi
+cd root
+mkdir 0x03_vi
+cd 0x03_vi/
+echo i > inserting
+echo dd > cutting
+echo p > pasting
+echo u > undoing
+echo ':q!<Enter>' > exiting
+echo 0 > beginning_of_the_line
+echo '$' > end_of_the_line
+cd /
+
+
+cd "$cwd"
