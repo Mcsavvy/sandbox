@@ -3,10 +3,9 @@
 # if all you projects were done without destroying any sandbox
 
 cwd=$(pwd)
-cd /
 
 # @0.00. Shell, navigation
-cd root
+cd /root
 touch so_cool
 cp school /tmp/
 mv old_school new_school
@@ -14,10 +13,9 @@ mv not_here /tmp/right_school
 rm ready_to_be_removed
 mkdir school_is_amazing
 rmdir empty_directory/
-cd /
 
 # @0.02. Emacs
-cd root
+cd /root
 mkdir 0x02_emacs
 cd 0x02_emacs
 echo "C-x C-f" > opening
@@ -27,11 +25,21 @@ echo "C-y" > pasting
 echo "C-s" > searching
 echo "C-/" > undoing
 echo "C-x C-c" > quitting
-cd /
 
+# @0.01. Emacs
+cd /root
+mkdir 0x01_emacs
+cd 0x01_emacs
+echo "C-x C-f" > opening
+echo "C-x C-s" > saving
+echo "C-k" > cutting
+echo "C-y" > pasting
+echo "C-s" > searching
+echo "C-/" > undoing
+echo "C-x C-c" > quitting
 
 # @0x03. vi
-cd root
+cd /root
 mkdir 0x03_vi
 cd 0x03_vi/
 echo i > inserting
@@ -41,63 +49,6 @@ echo u > undoing
 echo ':q!<Enter>' > exiting
 echo 0 > beginning_of_the_line
 echo '$' > end_of_the_line
-cd /
-
-
-# @0x01. git
-# to get started we need the following environmental variables
-# GH_TOKEN => Your github token
-# GH_USERNAME => Your github username
-# GH_NAME => Your name
-# GH_EMAIL => Your email address
-git clone "git clone https://$GH_TOKEN@github.com/$GH_USERNAME/alx-pre_course.git"
-cd alx-pre_course
-echo 'My first readme' > README.md
-git config --global user.email "$GH_EMAIL"
-git config --global user.name "$GH_NAME"
-git config --global init.defaultBranch main
-git add .
-git commit -m "My first commit"
-echo "If you're prompted for a password, please input \"$GH_TOKEN\""
-git push
-mkdir 0x01-git
-cp README.md 0x01-git
-cd 0x01-git
-mkdir bash c js
-touch c/c_is_fun.c js/main.js js/index.js bash/alx bash/school
-echo '#!/bin/bash' > bash/alx
-echo '#!/bin/bash' > bash/school
-echo 'echo "ALX"' >> bash/alx
-echo 'echo "School"' >> bash/school
-cd .. && git -am "Starting to code today, so cool"
-echo "If you're prompted for a password, please input \"$GH_TOKEN\""
-git push
-git branch update_script
-git checkout update_Script
-cd 0x01-git
-echo '#!/bin/bash' > bash/alx
-echo 'echo "ALX School"' >> bash/alx
-echo '#!/bin/bash' > bash/school
-echo 'echo "The school is open!"' >> bash/school
-cd .. && git commit -am "My personal work"
-echo "If you're prompted for a password, please input \"$GH_TOKEN\""
-git push origin update_script:update_script
-git checkout main
-cd 0x01-git
-echo '#!/bin/bash' > bash/alx
-echo 'echo "ALX School is so cool!"' >> bash/alx
-rm js -rf
-touch bash/98
-cd .. && git commit -am "Hot fix"
-echo "If you're prompted for a password, please input \"$GH_TOKEN\""
-git push
-echo "Please update your README.md file in the main branch from https://github.com"
-echo "After you've done that, press Enter to continue..."
-read updated_readme
-git pull
-echo "git pull" > 0x01-git/up_to_date
-git commit -am "How to be up to date in git"
-git push
 
 
 
