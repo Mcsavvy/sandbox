@@ -27,6 +27,5 @@ enter the location where you cloned this repository to and do
 
 ```bash
 cd sandbox
-chmod +x repair-sandbox
-./repair-sandbox
+bash ./main.sh
 ```
