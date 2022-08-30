@@ -20,7 +20,7 @@ shell_navigation_0_00(){
 
 
 # @0.02. Emacs
-emac_0_02(){
+emacs_0_02(){
 	cwd=$(pwd)
 	cd /root
 	mkdir 0x02_emacs
@@ -66,3 +66,29 @@ vi_0_03(){
 	echo '$' > end_of_the_line
 	cd "$cwd"
 }
+
+# @0x02. vi
+vi_0_02(){
+	cwd=$(pwd)
+	cd /root
+	mkdir 0x02_vi
+	cd 0x02_vi/
+	echo i > inserting
+	echo dd > cutting
+	echo p > pasting
+	echo u > undoing
+	echo ':q!<Enter>' > exiting
+	echo 0 > beginning_of_the_line
+	echo '$' > end_of_the_line
+	cd "$cwd"
+}
+
+# run all projects
+solve_all_projects(){
+	shell_navigation_0_00
+	emac_0_02
+	emacs_0_01
+	vi_0_03
+	vi_0_02
+}
+
